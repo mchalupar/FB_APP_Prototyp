@@ -51,7 +51,7 @@ Class Question
 
     public function setSubjectId($value)
     {
-        if (is_string($value))
+        if (is_int($value))
             $this->subjectId = $value;
         else
             throw new InvalidFormatException();

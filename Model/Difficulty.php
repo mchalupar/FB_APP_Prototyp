@@ -49,7 +49,7 @@ Class Difficulty
 
     public function setDifficulty($value)
     {
-        if (is_int($value))
+        if (is_string($value))
             $this->difficulty = $value;
         else
             throw new InvalidFormatException();

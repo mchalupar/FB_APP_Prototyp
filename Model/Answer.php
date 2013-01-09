@@ -8,7 +8,7 @@ include_once 'InvalidFormatException.php';
  * To change this template use File | Settings | File Templates.
  */
 
-Class Grade
+Class Answer
 {
 
     private $id;

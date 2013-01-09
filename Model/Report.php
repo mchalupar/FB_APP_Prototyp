@@ -11,33 +11,19 @@ include_once 'InvalidFormatException.php';
 Class Report
 {
 
-    private $answerId;
-    private $questId;
+    private $id;
     private $report;
 
     #region Properties
-    public function getAnswerId()
+    public function getId()
     {
-        return $this->answerId;
+        return $this->id;
     }
 
-    public function setAnswerId($value)
+    public function setId($value)
     {
         if (is_int($value))
-            $this->answerId = $value;
-        else
-            throw new InvalidFormatException();
-    }
-
-    public function getQuestId()
-    {
-        return $this->questId;
-    }
-
-    public function setQuestId($value)
-    {
-        if (is_int($value))
-            $this->questId = $value;
+            $this->id = $value;
         else
             throw new InvalidFormatException();
     }
@@ -58,10 +44,11 @@ Class Report
 
     public function __construct() {
         $param = func_get_args();
-        if (func_num_args() == 3) {
-            $this->setAnswerId($param[0]);
-            $this->setQuestId($param[1]);
-            $this->setReport($param[2]);
+        if (func_num_args() == 1) {
+            $this->setReport($param[0]);
+        } else if (func_num_args() == 2) {
+            $this->setId($param[0]);
+            $this->setReport($param[1]);
         } else {
             throw new InvalidParamException();
         }

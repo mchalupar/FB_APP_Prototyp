@@ -1,0 +1,126 @@
+<?php
+include_once 'Common/DaoFactory.php';
+include_once 'Model/General.php';
+
+echo "<h1>Testing DAOs with Factory</h1>";
+
+echo "<h2>UserDao</h2>";
+var_dump(DaoFactory::CreateUserDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateUserDao()->FindById(1));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateUserDao()->Update(new User(1, "Charly", "Chalupar", 42, 17)));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateUserDao()->Insert(new User("Chicken", "Charly", 42, 17)));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateUserDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateUserDao()->Delete(5));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateUserDao()->FindAll());
+
+echo "<h2>QuestionDao</h2>";
+var_dump(DaoFactory::CreateQuestionDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateQuestionDao()->FindById(1));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateQuestionDao()->Update(new Question(1, "Calculate the term: \" 7 * 6 = \"", 1, 272, 0)));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateQuestionDao()->Insert(new Question("Calculate the term: \"10 * 7 = \"", 1, 22, 0)));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateQuestionDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateQuestionDao()->Delete(2));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateQuestionDao()->FindAll());
+
+echo "<h2>SubjectDao</h2>";
+var_dump(DaoFactory::CreateSubjectDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateSubjectDao()->FindById(1));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateSubjectDao()->Update(new Subject(1, "Mathe")));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateSubjectDao()->Insert(new Subject("Literature")));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateSubjectDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateSubjectDao()->Delete(2));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateSubjectDao()->FindAll());
+
+echo "<h2>GradeDao</h2>";
+var_dump(DaoFactory::CreateGradeDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateGradeDao()->FindById(1));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateGradeDao()->Update(new Grade(1, "Mathe")));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateGradeDao()->Insert(new Grade("Literature")));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateGradeDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateGradeDao()->Delete(2));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateGradeDao()->FindAll());
+
+echo "<h2>CommentDao</h2>";
+var_dump(DaoFactory::CreateCommentDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateCommentDao()->FindById(1));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateCommentDao()->Update(new Comment(1, 1, "Like that one! xD", 2)));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateCommentDao()->Insert(new Comment(1, "WTF2", 4)));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateCommentDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateCommentDao()->Delete(4, 1));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateCommentDao()->FindAll());
+
+echo "<h2>DifficultyDao</h2>";
+var_dump(DaoFactory::CreateDifficultyDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateDifficultyDao()->FindById(1));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateDifficultyDao()->Update(new Difficulty(1, 1, "Like Hell")));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateDifficultyDao()->Insert(new Difficulty(1, 3, "WTF2")));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateDifficultyDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateDifficultyDao()->Delete(4, 1));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateDifficultyDao()->FindAll());
+
+echo "<h2>AnswerDao</h2>";
+var_dump(DaoFactory::CreateAnswerDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateAnswerDao()->FindById(1));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateAnswerDao()->Update(new Answer(1, 1, "42!", true)));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateAnswerDao()->Insert(new Answer(1, "WTF", false)));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateAnswerDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateAnswerDao()->Delete(4, 1));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateAnswerDao()->FindAll());
+
+
+echo "<h2>ReportDao</h2>";
+var_dump(DaoFactory::CreateReportDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateReportDao()->FindById(1));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateReportDao()->Update(new Report(1, "Correct Answer to all Questions in Universe")));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateReportDao()->Insert(new Report("WTF")));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateReportDao()->FindAll());
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateReportDao()->Delete(4, 1));
+echo "</br></br></br>";
+var_dump(DaoFactory::CreateReportDao()->FindAll());
