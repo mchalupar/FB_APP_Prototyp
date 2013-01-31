@@ -15,6 +15,7 @@ Class Answer
     private $questId;
     private $option;
     private $correct;
+    private $reportId;
 
     #region Properties
     public function getId()
@@ -65,6 +66,19 @@ Class Answer
     {
         if (is_bool($value))
             $this->correct = $value;
+        else
+            throw new InvalidFormatException();
+    }
+
+    public function getReportId()
+    {
+        return $this->reportId;
+    }
+
+    public function setReportId($value)
+    {
+        if (is_string($value))
+            $this->reportId = $value;
         else
             throw new InvalidFormatException();
     }
