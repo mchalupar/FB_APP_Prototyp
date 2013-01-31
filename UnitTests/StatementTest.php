@@ -11,11 +11,36 @@ include_once("../DatabaseManager/Statement.php");
  */
 
 $stmt = new Statement();
-$stmt->prepare("SELECT * FROM :table WHERE :column = :value");
+$stmt->prepare("SELECT * FROM :table WHERE :column = :value;");
 echo $stmt."</br>";
 $stmt->bindParam(":table", "MyTable", "string" );
 echo $stmt."</br>";
 $stmt->bindParam(":column", "MyColumn", "string");
 echo $stmt."</br>";
 $stmt->bindParam(":value", false, "boolean");
+echo $stmt."</br>";
+
+echo "</br></br>";
+
+$stmt = new Statement();
+$stmt->prepare("SELECT * FROM :table WHERE :column = :value;");
+echo $stmt."</br>";
+$stmt->bindParam(":table", "MyTable", "string" );
+echo $stmt."</br>";
+$stmt->bindParam(":column", "'MyColumn", "string");
+echo $stmt."</br>";
+$stmt->bindParam(":value", false, "boolean");
+echo $stmt."</br>";
+
+
+echo "</br></br>";
+
+$stmt = new Statement();
+$stmt->prepare("SELECT * FROM :table WHERE :column = :value;");
+echo $stmt."</br>";
+$stmt->bindParam(":table", "MyTable", "string" );
+echo $stmt."</br>";
+$stmt->bindParam(":column", "' OR ''='", "string");
+echo $stmt."</br>";
+$stmt->bindParam(":value", false, "string");
 echo $stmt."</br>";

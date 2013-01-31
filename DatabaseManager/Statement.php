@@ -58,7 +58,7 @@ class Statement
                 throw new InvalidFormatException();
                 break;
         }
-        $this->stmt = str_replace($param, $value, $this->stmt);
+        $this->stmt = str_replace($param, mysql_real_escape_string($value), $this->stmt);
     }
 
     public function __toString()
