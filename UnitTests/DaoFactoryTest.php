@@ -1,6 +1,6 @@
 <?php
-include_once 'Common/DaoFactory.php';
-include_once 'Model/General.php';
+include_once '../Common/DaoFactory.php';
+include_once '../Model/General.php';
 
 echo "<h1>Testing DAOs with Factory</h1>";
 

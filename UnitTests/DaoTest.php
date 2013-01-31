@@ -1,6 +1,6 @@
 <?php
-include_once 'Generic/GeneralDao.php';
-include_once 'Model/General.php';
+include_once '../Generic/GeneralDao.php';
+include_once '../Model/General.php';
 
 echo "<h1>Testing DAOs</h1>";
 
