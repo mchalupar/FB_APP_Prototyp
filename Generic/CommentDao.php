@@ -7,8 +7,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include_once 'Common/ICommentDao.php';
-include_once 'Model/Comment.php';
+include_once '../Common/ICommentDao.php';
+include_once '../Model/Comment.php';
 
 class CommentDao implements ICommentDao
 {

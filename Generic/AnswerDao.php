@@ -7,8 +7,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include_once 'Common/IAnswerDao.php';
-include_once 'Model/Answer.php';
+include_once '../Common/IAnswerDao.php';
+include_once '../Model/Answer.php';
 
 class AnswerDao implements IAnswerDao
 {

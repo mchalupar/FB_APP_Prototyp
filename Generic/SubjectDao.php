@@ -7,8 +7,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include_once 'Common/ISubjectDao.php';
-include_once 'Model/Subject.php';
+include_once '../Common/ISubjectDao.php';
+include_once '../Model/Subject.php';
 
 class SubjectDao implements ISubjectDao
 {

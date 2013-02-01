@@ -7,8 +7,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include_once 'Common/IQuestionDao.php';
-include_once 'Model/Question.php';
+include_once '../Common/IQuestionDao.php';
+include_once '../Model/Question.php';
 
 class QuestionDao implements IQuestionDao
 {

@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include_once 'Generic/GeneralDao.php';
+include_once '../Generic/GeneralDao.php';
 
 class DaoFactory
 {

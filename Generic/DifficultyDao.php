@@ -7,8 +7,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include_once 'Common/IDifficultyDao.php';
-include_once 'Model/Difficulty.php';
+include_once '../Common/IDifficultyDao.php';
+include_once '../Model/Difficulty.php';
 
 class DifficultyDao implements IDifficultyDao
 {

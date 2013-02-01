@@ -7,8 +7,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include_once 'Common/IReportDao.php';
-include_once 'Model/Report.php';
+include_once '../Common/IReportDao.php';
+include_once '../Model/Report.php';
 
 class ReportDao implements IReportDao
 {

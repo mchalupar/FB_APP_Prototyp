@@ -7,8 +7,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include_once 'Common/IGradeDao.php';
-include_once 'Model/Grade.php';
+include_once '../Common/IGradeDao.php';
+include_once '../Model/Grade.php';
 
 class GradeDao implements IGradeDao
 {

@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include_once 'Common/ISpecifiedDao.php';
+include_once '../Common/ISpecifiedDao.php';
 
 interface IQuestionDao extends IGeneralDao {
 
