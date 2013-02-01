@@ -26,18 +26,18 @@ class Database
         return $this->affectedRows;
     }
 
-    public function _construct()
+    public function __construct()
     {
         $conn = new DBConnection();
 
         try {
-            mysql_connect($conn->getRoot, $conn->getUser, $conn->getPass);
+            mysql_connect($conn->getRoot(), $conn->getUser(), $conn->getPass());
         } catch (Exception $e) {
             throw new ConnectionFailedException();
         }
 
         try {
-            mysql_select_db($conn->getDbName);
+            mysql_select_db($conn->getDbName());
         } catch (Exception $e) {
             throw new DatabaseNotFoundException();
         }
@@ -48,6 +48,7 @@ class Database
         $this->sql = mysql_real_escape_string($sql);
         $this->lastResult = mysql_query($this->sql);
         $this->affectedRows = mysql_affected_rows();
+        return $this->lastResult;
     }
 
     public function destruct()

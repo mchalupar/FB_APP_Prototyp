@@ -7,13 +7,17 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include_once 'Common/IUserDao.php';
-include_once 'Model/User.php';
+include_once '../Common/IUserDao.php';
+include_once '../Model/User.php';
+
+include_once '../DatabaseManager/Database.php';
+include_once '../DatabaseManager/Statement.php';
 
 class UserDao implements IUserDao
 {
 
     private $daolist = array();
+    private $SQL_FIND_ALL = 'SELECT * FROM User';
 
     public function __construct()
     {
@@ -42,7 +46,24 @@ class UserDao implements IUserDao
 
     public function FindAll()
     {
-        return $this->daolist;
+        //return $this->daolist;
+        $db = new Database();
+        $result = $db->query($this->SQL_FIND_ALL);
+
+        $resultObj = array();
+        while($row = mysql_fetch_assoc($db->getLastResult()))
+        {
+            $resultObj[$row['id']] = new User(
+                (integer)$row['id'],
+                $row['firstName'],
+                $row['lastName'],
+                (integer)$row['level'],
+                (integer)$row['grade']
+            );
+        }
+
+        $db->destruct();
+        return $resultObj;
     }
 
     public function Update($entity)

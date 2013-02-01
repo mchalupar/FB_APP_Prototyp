@@ -8,6 +8,9 @@
      */
 class DBConnection {
     private $user = "root";
+    private $pass = "";
+    private $root = "localhost";
+    private $dbName = "knowhow";
 
     public function getRoot()
     {
@@ -28,8 +31,5 @@ class DBConnection {
     {
         return $this->dbName;
     }
-    private $pass = "";
-    private $root = "localhost";
-    private $dbName = "knowhow";
 }
 ?>
